@@ -38,6 +38,8 @@
             </dict>
         </plist>
     </ios>
+    <property name="ti.android.threadstacksize" type="int">128000</property>
+    <property name="ti.android.largeHeap" type="bool">true</property>
     <android xmlns:android="http://schemas.android.com/apk/res/android"/>
     <mobileweb>
         <precache/>

@@ -1,3 +1,12 @@
 ".container": {
+  backgroundColor: "white",
+  layout: 'vertical'
 }
 
+"Button": {
+  top: 20
+}
+
+".vertical" : {
+  layout: "vertical"
+}

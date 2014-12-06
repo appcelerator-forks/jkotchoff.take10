@@ -1,5 +1,23 @@
 <Alloy>
+  <Collection src="deca" />
+  
 	<Window class="container">
-		<Button onClick="createDeca" title="Create a Deca"/>
+    <Button onClick="createDeca" title="Create a Deca"/>
+    <Button onClick="viewDecas" title="My Decas"/>
+    <Button onClick="aboutTake10" title="About Take 10"/>
+
+    <ListView defaultItemTemplate="decaTemplate">
+      <Templates>
+        <ItemTemplate name="decaTemplate">
+          <View class="vertical">
+            <Label bindId="name"/>
+            <ImageView bindId="image1"/>
+          </View>
+        </ItemTemplate>
+      </Templates>
+      <ListSection dataTransform="transformData" dataCollection="deca">
+        <ListItem name:text="{name}" image1:image="{image1}" />
+      </ListSection>
+    </ListView>
 	</Window>
 </Alloy>

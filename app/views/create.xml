@@ -22,9 +22,9 @@
         <ImageView id="image_10"/>
       </View>
 
-      <View class="horizontal" class="top_offset">
+      <View class="top_offset">
         <Label class="lbl">Deca name:</Label>
-        <TextField/>
+        <TextField id="decaName"/>
       </View>
 
       <Button id="createBtn" class="top_offset" onClick="saveDeca" title="Create Deca!"/>

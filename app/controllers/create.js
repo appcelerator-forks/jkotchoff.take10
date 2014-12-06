@@ -44,7 +44,9 @@ function pickImage(e) {
       {
         images[insert_pos].image = image;
         insert_pos++;
+
         if(insert_pos == images.length) {
+          //TODO: we can set this to visible again if images can be deleted
           $.imageSelection.setVisible(false);
         }
         //$.image_1.image = image;
@@ -71,8 +73,39 @@ function pickImage(e) {
   });
 }
 
+var moment = require('alloy/moment');
+var library = Alloy.createCollection('deca');
+
 function saveDeca() {
-  alert("TODO");
+  var decaName = $.decaName.value;
+  if(decaName == '') {
+    alert('Please enter a name for your Deca');
+    return false;
+  }
+  if(insert_pos == 0) {
+    alert('Please enter at least one image to your Deca');
+    return false;
+  }
+
+  // http://stackoverflow.com/questions/6493055/appcelerator-titanium-base64-encode-blob-objects
+console.log("deca name is: " + $.decaName.value);
+  var encodedImage = Titanium.Utils.base64encode(images[0].image).toString();
+console.log("image string is: " + encodedImage);
+
+  var now = moment();
+  var deca = Alloy.createModel('deca', {
+      name: decaName,
+      image1: encodedImage,
+      dateCreated: now.format('YYYYMMDDHHmmss'),
+      dateCreated: now.format('YYYYMMDDHHmmss')
+  });
+  deca.save();
+  Alloy.Collections.deca.fetch();
+  $.createWindow.close();
+/*
+        var decoded = Ti.UI.base64decode(encoded);
+        images[insert_pos].image = decoded;
+*/        
 }
 
 $.createWindow.open();

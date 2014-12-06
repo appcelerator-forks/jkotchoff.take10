@@ -21,9 +21,12 @@
   }
 }
 
-".horizontal" : {
-  layout: "horizontal",
+"View": {
   height: Ti.UI.SIZE
+}
+
+".horizontal" : {
+  layout: "horizontal"
 }
 
 "ImageView": {
@@ -46,7 +49,8 @@
 }
 
 "TextField": {
-  width: "50%",
+  left: 90,
+  right: 0,
   height: Ti.UI.SIZE,
   borderStyle: Ti.UI.INPUT_BORDERSTYLE_ROUNDED,
   color: '#336699',
@@ -54,8 +58,8 @@
 
 ".lbl": {
   left: 0,
-  width: "40%",
+  width: 90,
   font: {
-    fontSize: 12
+    fontSize: 14
   }
 }

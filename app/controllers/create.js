@@ -5,8 +5,9 @@ $.createWindow.orientationModes = [Ti.UI.PORTRAIT];
 Alloy.Globals.createb = $.createBtn;
 
 // set image placeholders up
-var image_size = parseInt((Ti.Platform.displayCaps.platformWidth - 14) / 5 * 0.95);
-var image_gap  = parseInt((Ti.Platform.displayCaps.platformWidth - 14) / 4 * 0.05);
+//var image_size = parseInt((Ti.Platform.displayCaps.platformWidth - 14) / 5 * 0.95);
+//var image_gap  = parseInt((Ti.Platform.displayCaps.platformWidth - 14) / 4 * 0.05);
+//console.log("platform size: " + Ti.Platform.displayCaps.platformWidth +  " setting image size to: " + image_size + ", setting gap to: " + image_gap);
 var images = [
   $.image_1,
   $.image_2,
@@ -19,7 +20,7 @@ var images = [
   $.image_9,
   $.image_10
 ];
-
+/*
 for(var i = 0; i < images.length; i++) {
   images[i].width  = image_size;
   images[i].height = image_size;
@@ -28,7 +29,7 @@ for(var i = 0; i < images.length; i++) {
   }
   images[i].top    = image_gap;
 }
-
+*/
 var insert_pos = 0;
 
 function pickImage(e) {

@@ -7,14 +7,14 @@
         <Button onClick="pickImage" title="Add an Image"/>
       </View>
 
-      <View class="horizontal">
+      <View class="horizontal" left="7">
         <ImageView id="image_1"/>
         <ImageView id="image_2"/>
         <ImageView id="image_3"/>
         <ImageView id="image_4"/>
         <ImageView id="image_5"/>
       </View>
-      <View class="horizontal">
+      <View class="horizontal" left="7">
         <ImageView id="image_6"/>
         <ImageView id="image_7"/>
         <ImageView id="image_8"/>

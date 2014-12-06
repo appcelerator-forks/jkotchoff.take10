@@ -49,7 +49,6 @@ function pickImage(e) {
           //TODO: we can set this to visible again if images can be deleted
           $.imageSelection.setVisible(false);
         }
-        //$.image_1.image = image;
       }
       else
       {
@@ -77,6 +76,7 @@ var moment = require('alloy/moment');
 var library = Alloy.createCollection('deca');
 
 function saveDeca() {
+
   var decaName = $.decaName.value;
   if(decaName == '') {
     alert('Please enter a name for your Deca');
@@ -88,24 +88,36 @@ function saveDeca() {
   }
 
   // http://stackoverflow.com/questions/6493055/appcelerator-titanium-base64-encode-blob-objects
-console.log("deca name is: " + $.decaName.value);
-  var encodedImage = Titanium.Utils.base64encode(images[0].image).toString();
-console.log("image string is: " + encodedImage);
+  var i1 = (images[0].image != null) ? Titanium.Utils.base64encode(images[0].image).toString() : null;
+  var i2 = (images[1].image != null) ? Titanium.Utils.base64encode(images[1].image).toString() : null;
+  var i3 = (images[2].image != null) ? Titanium.Utils.base64encode(images[2].image).toString() : null;
+  var i4 = (images[3].image != null) ? Titanium.Utils.base64encode(images[3].image).toString() : null;
+  var i5 = (images[4].image != null) ? Titanium.Utils.base64encode(images[4].image).toString() : null;
+  var i6 = (images[5].image != null) ? Titanium.Utils.base64encode(images[5].image).toString() : null;
+  var i7 = (images[6].image != null) ? Titanium.Utils.base64encode(images[6].image).toString() : null;
+  var i8 = (images[7].image != null) ? Titanium.Utils.base64encode(images[7].image).toString() : null;
+  var i9 = (images[8].image != null) ? Titanium.Utils.base64encode(images[8].image).toString() : null;
+  var i10 = (images[9].image != null) ? Titanium.Utils.base64encode(images[9].image).toString() : null;
 
   var now = moment();
   var deca = Alloy.createModel('deca', {
       name: decaName,
-      image1: encodedImage,
+      image1: i1,
+      image2: i2,
+      image3: i3,
+      image4: i4,
+      image5: i5,
+      image6: i6,
+      image7: i7,
+      image8: i8,
+      image9: i9,
+      image10: i10,
       dateCreated: now.format('YYYYMMDDHHmmss'),
       dateCreated: now.format('YYYYMMDDHHmmss')
   });
   deca.save();
   Alloy.Collections.deca.fetch();
   $.createWindow.close();
-/*
-        var decoded = Ti.UI.base64decode(encoded);
-        images[insert_pos].image = decoded;
-*/        
 }
 
 $.createWindow.open();

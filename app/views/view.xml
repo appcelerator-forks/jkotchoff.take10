@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="decaWindow"  class="container">
+	  <ScrollView id="decosPanel" class="vertical">
+	  </ScrollView>
+	</Window>
+</Alloy>

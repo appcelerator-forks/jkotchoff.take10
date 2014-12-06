@@ -1,0 +1,34 @@
+<Alloy>
+	<Window id="createWindow">
+	  <View class="container">
+      <Label class="heading top_offset">Create a Deca</Label>
+
+      <View id="imageSelection" class="horizontal top_offset">
+        <Button onClick="pickImage" title="Add an Image"/>
+      </View>
+
+      <View class="horizontal">
+        <ImageView id="image_1"/>
+        <ImageView id="image_2"/>
+        <ImageView id="image_3"/>
+        <ImageView id="image_4"/>
+        <ImageView id="image_5"/>
+      </View>
+      <View class="horizontal">
+        <ImageView id="image_6"/>
+        <ImageView id="image_7"/>
+        <ImageView id="image_8"/>
+        <ImageView id="image_9"/>
+        <ImageView id="image_10"/>
+      </View>
+
+      <View class="horizontal" class="top_offset">
+        <Label class="lbl">Deca name:</Label>
+        <TextField/>
+      </View>
+
+      <Button id="createBtn" class="top_offset" onClick="saveDeca" title="Create Deca!"/>
+
+    </View>
+	</Window>
+</Alloy>

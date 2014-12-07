@@ -15,7 +15,17 @@ function showDeca(e) {
   Ti.API.info('source obj: ' + JSON.stringify(e));
   Ti.API.info('deca id: ' + e.row.decaId);
 
-  Alloy.createController('view', {decaId: e.row.decaId});
+  var decaId = Ti.Android ? e.rowData.decaId : e.row.decaId;
+
+  Alloy.createController('view', {decaId: decaId});
 }
+
+$.myDecas.addEventListener('open', function(){
+  if(OS_ANDROID) {
+    var activity = $.myDecas.getActivity();
+    action_bar = activity.actionBar; 
+    action_bar.title = "My Decas";
+  }
+});
 
 $.myDecas.open();

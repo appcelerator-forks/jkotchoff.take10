@@ -1,10 +1,12 @@
 
 ".container" : {
-  
+  backgroundColor: 'white'
 }
 
 
 "TableViewRow" : {
+  height: '44dp',
+  color: 'black',
   hasChild: true
 }
 

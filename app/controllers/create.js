@@ -121,4 +121,12 @@ function saveDeca() {
   $.createWindow.close();
 }
 
+$.createWindow.addEventListener('open', function(){
+  if(OS_ANDROID) {
+    var activity = $.createWindow.getActivity();
+    action_bar = activity.actionBar; 
+    action_bar.title = "Create a Deca";
+  }
+});
+
 $.createWindow.open();

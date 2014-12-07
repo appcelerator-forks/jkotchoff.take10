@@ -1,8 +1,6 @@
 <Alloy>
 	<Window id="createWindow">
 	  <View class="container">
-      <Label class="heading top_offset">Create a Deca</Label>
-
       <View id="imageSelection" class="horizontal top_offset">
         <Button onClick="pickImage" title="Add an Image"/>
       </View>

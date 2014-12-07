@@ -1,12 +1,16 @@
+"Window" : {
+  backgroundColor: 'white'
+}
 
 ".container" : {
-  backgroundColor: 'white',
   layout:'vertical',
   backgroundRepeat: true,
-  backgroundImage: 'images/appicon.png'  
+  backgroundImage: '/images/appicon.png'  
 }
 
 "TableView" : {
+  left: '7dp',
+  right: '7dp',
   backgroundColor: 'transparent',
   separatorColor: '#e3e3e5'
 }

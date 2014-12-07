@@ -1,9 +1,12 @@
 <Alloy>
   <Collection src="deca" />
+	<Window id="myDecas">
+	  <View class="container">
+      <Button onClick="createDeca" title="Create a Deca"/>
   
-	<Window class="container">
-    <Button onClick="createDeca" title="Create a Deca"/>
-    <Button onClick="viewDecas" title="My Decas"/>
-    <Button onClick="aboutTake10" title="About Take 10"/>
-	</Window>
+      <TableView id="myDecasList" dataTransform="transformData" dataCollection="deca">
+        <TableViewRow onClick="showDeca" decaId="{decaId}" title="{name}" />
+      </TableView>
+    </View>
+  </Window>
 </Alloy>

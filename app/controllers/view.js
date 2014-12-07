@@ -16,33 +16,31 @@ var imageBlobs = [
 ];
 
 
+//var imageLib = require('fokkezb.ui');
 var imageLib = require('fokkezb.image');
 
 _.each(imageBlobs, function(imageBlob){
   if(imageBlob != null) {
+/*    
+    var imageView = imageLib.createView({
+      height: Ti.Platform.displayCaps.platformHeight - 50,
+      width : Ti.UI.FILL,
+      backgroundImage: Ti.Utils.base64decode(imageBlob),
+      backgroundSize: 'cover'
+    });
+*/    
     var width = Ti.Platform.displayCaps.platformWidth;
-    if(Ti.Android){
-      width = width / 2;
-    }
     var height = Ti.Platform.displayCaps.platformHeight;
-    if(Ti.Android){
-      height = height / 2;
-    }
-    
     var imageView = Ti.UI.createImageView({
-      width: width,
-      height: height
+      width: (Ti.Android ? width / 2 : width),
+      height: (Ti.Android ? height / 2 : height)
     });
     imageView.image = Ti.Utils.base64decode(imageBlob);
-    imageView.image = imageLib.crop(imageView.image, {width: width, height: height});
+    imageView.image = imageLib.crop(imageView.image, (width / 2), (height / 2));
+
     $.decosPanel.add(imageView);
   }
 });
-
-//$.decaWindow
-
-//-  var attrs = model.toJSON();
-//-  attrs.image1 = Ti.Utils.base64decode(attrs.image1);
 
 $.decaWindow.addEventListener('open', function(){
   if(OS_ANDROID) {

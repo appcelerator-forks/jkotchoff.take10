@@ -1,12 +1,37 @@
-".container": {
-  backgroundColor: "white",
-  layout: 'vertical'
+
+".container" : {
+  backgroundColor: 'white',
+  layout:'vertical',
+  backgroundRepeat: true,
+  backgroundImage: 'images/appicon.png'  
 }
 
-"Button": {
-  top: 20
+"TableView" : {
+  backgroundColor: 'transparent',
+  separatorColor: '#e3e3e5'
 }
 
-".vertical" : {
-  layout: "vertical"
+"Button" : {
+  top: '14dp',
+  bottom: '14dp',
+  backgroundImage: '/images/btn_blue.png',
+  borderRadius:4,
+  width: '150dp',
+  height: '44dp',
+  color: 'white',
+  font: {
+    fontSize: '14dp',
+    fontWeight: 'bold'
+  }
 }
+
+"TableViewRow" : {
+  backgroundColor: 'white',
+/*
+  rightImage: 'images/arrow.png',
+*/
+  height: '44dp',
+  color: 'black',
+  hasChild: true
+}
+

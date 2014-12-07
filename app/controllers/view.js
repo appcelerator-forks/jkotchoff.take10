@@ -47,8 +47,10 @@ $.decaWindow.addEventListener('open', function(){
     var activity = $.decaWindow.getActivity();
     action_bar = activity.actionBar; 
     action_bar.title = deca.attributes.name;
+  } else {
+    $.decaWindow.setTitle(deca.attributes.name);
   }
 });
 
 
-$.decaWindow.open();
+//$.decaWindow.open();

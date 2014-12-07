@@ -142,7 +142,9 @@ $.createWindow.addEventListener('open', function(){
     var activity = $.createWindow.getActivity();
     action_bar = activity.actionBar; 
     action_bar.title = "Create a Deca";
+  } else {
+    $.createWindow.setTitle("Create a Deca");
   }
 });
 
-$.createWindow.open();
+//$.createWindow.open();

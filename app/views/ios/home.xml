@@ -1,0 +1,14 @@
+<Alloy>
+  <Collection src="deca" />
+  <NavigationWindow id="nav" platform="ios">
+    <Window id="myDecas">
+      <View class="container">
+        <Button onClick="createDeca" title="Create a Deca"/>
+    
+        <TableView id="myDecasList" dataTransform="transformData" dataCollection="deca">
+          <TableViewRow onClick="showDeca" decaId="{decaId}" title="{name}" />
+        </TableView>
+      </View>
+    </Window>
+  </NavigationWindow>
+</Alloy>

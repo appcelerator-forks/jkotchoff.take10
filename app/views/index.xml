@@ -1,12 +1,3 @@
-<Alloy>
-  <Collection src="deca" />
-	<Window id="myDecas">
-	  <View class="container">
-      <Button onClick="createDeca" title="Create a Deca"/>
-  
-      <TableView id="myDecasList" dataTransform="transformData" dataCollection="deca">
-        <TableViewRow onClick="showDeca" decaId="{decaId}" title="{name}" />
-      </TableView>
-    </View>
-  </Window>
-</Alloy>
+<!-- This View will never be shown.  It's only used to keep Alloy happy   -->
+<!-- index.js will pick it up from here                   -->
+<Alloy/>

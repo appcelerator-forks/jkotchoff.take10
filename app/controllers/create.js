@@ -43,8 +43,23 @@ function pickImage(e) {
       Ti.API.debug('Our type was: '+event.mediaType);
       if(event.mediaType == Ti.Media.MEDIA_TYPE_PHOTO)
       {
-        images[insert_pos].image = image;
+        var resizedImage = image.imageAsResized(1024, 1024);
+/*
+        // https://developer.appcelerator.com/question/129933/how-to-resize-the-photo
+        if(image.height >= 480) {
+          image.height = 480;
+        }
+        if(image.width >= 320) {
+          image.width = 320;
+        }
+*/
+        images[insert_pos].image = resizedImage;
+        
         insert_pos++;
+        if(insert_pos == 2) {
+          alert("only 2 images can be added for now..");
+          $.imageSelection.setVisible(false);
+        }
 
         if(insert_pos == images.length) {
           //TODO: we can set this to visible again if images can be deleted
@@ -119,6 +134,7 @@ function saveDeca() {
   deca.save();
   Alloy.Collections.deca.fetch();
   $.createWindow.close();
+  alert("Deca created!");
 }
 
 $.createWindow.addEventListener('open', function(){

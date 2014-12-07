@@ -32,11 +32,11 @@ _.each(imageBlobs, function(imageBlob){
     var width = Ti.Platform.displayCaps.platformWidth;
     var height = Ti.Platform.displayCaps.platformHeight;
     var imageView = Ti.UI.createImageView({
-      width: (Ti.Android ? width / 2 : width),
-      height: (Ti.Android ? height / 2 : height)
+      width: "100%",
+      height: (Ti.Android ? height / 6 : height)
     });
     imageView.image = Ti.Utils.base64decode(imageBlob);
-    imageView.image = imageLib.crop(imageView.image, (width / 2), (height / 2));
+    imageView.image = imageLib.crop(imageView.image, (width / 2), (height / 6));
 
     $.decosPanel.add(imageView);
   }
